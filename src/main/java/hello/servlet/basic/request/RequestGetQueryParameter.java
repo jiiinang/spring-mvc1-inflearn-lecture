@@ -17,8 +17,12 @@ public class RequestGetQueryParameter extends HttpServlet {
 
         String username = request.getParameter("username");
         String age = request.getParameter("age");
+        String[] sames = request.getParameterValues("same");
 
+        for(String same : sames){
+            response.getWriter().write(same + " : ");
+        }
         response.getWriter().write(username + " : " + age);
-
     }
+
 }
